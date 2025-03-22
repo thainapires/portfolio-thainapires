@@ -18,19 +18,19 @@ export function Header() {
     ];
 
     return (
-        <header className="border-b border-gray-700 py-8 px-18">
-            <div className="flex items-center justify-between gap-12">
+        <header className="border-b border-gray-700 py-8 px-10 xl:px-18 sticky">
+            <div className="flex items-center justify-between gap-6 lg:gap-12">
                 <div className="flex items-center justify-between w-full gap-6">
                     <Link href="/" className="flex items-center gap-2">
                         <Palette className="h-6 w-6 text-primary" />
-                        <span className="font-bold text-2xl">Thainá Pires</span>
+                        <span className="font-bold text-lg lg:text-2xl">Thainá Pires</span>
                     </Link>
-                    <nav className="hidden md:flex items-center gap-12">
+                    <nav className="hidden md:flex items-center gap-3 lg:gap-8 xl:gap-12">
                         {navItems.map((item) => (
                             <Link
                                 key={item.path}
                                 href={item.path}
-                                className={`text-lg font-medium transition-colors hover:text-primary ${
+                                className={`text-sm lg:text-lg font-base lg:font-medium transition-colors hover:text-primary ${
                                     location.pathname === item.path
                                         ? "text-primary"
                                         : "text-foreground"

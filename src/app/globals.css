@@ -9,7 +9,7 @@
 }
 
 .dark {
-  --background: #111827;
+  --background: var(--color-gray-900);
   --foreground: #FDF7F8;
   --muted-background: #18212F;
   --card: #1F2937;
@@ -26,5 +26,5 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Inter;
+  font-family: Rubik;
 }
