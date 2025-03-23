@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { ThemeProvider } from "next-themes";
 import { Inter, Poppins, Rubik } from "next/font/google";
+import { Header } from "./components/layout/header";
 import "./globals.css";
 
 const inter = Inter({
@@ -31,6 +32,7 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${rubik.variable} ${poppins.variable} antialiased`} suppressHydrationWarning>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem={true}> 
+          <Header />
           {children}
         </ThemeProvider>
       </body>

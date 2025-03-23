@@ -2,15 +2,15 @@
 
 import { Palette } from "lucide-react";
 import Link from "next/link";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
 import { ThemeToggle } from "./theme-toggle";
 
 export function Header() {
-    const [ isConnected, setIsConnected ] = useState(false);
+    const pathname = usePathname();
 
     const navItems = [
         { name: "Home", path: "/" },
-        { name: "About", path: "/about" },
+        { name: "About", path: "/about-me" },
         { name: "Projects", path: "/projects" },
         { name: "Experience", path: "/experience" },
         { name: "Education", path: "/education"},
@@ -30,11 +30,8 @@ export function Header() {
                             <Link
                                 key={item.path}
                                 href={item.path}
-                                className={`text-sm lg:text-md xl:text-lg font-base lg:font-medium transition-colors text-gray-200 hover:text-primary ${
-                                    location.pathname === item.path
-                                        ? "text-primary"
-                                        : "text-foreground"
-                                }`}
+                                className={`text-sm lg:text-md xl:text-lg font-base lg:font-medium transition-colors 
+                                    ${pathname === item.path ? 'text-primary font-bold' : 'text-gray-200 hover:text-primary'}`}
                             >
                                 {item.name}
                             </Link>

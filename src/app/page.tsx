@@ -2,15 +2,13 @@ import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
-import { AboutMeCards } from "./components/layout/about-me-cards";
-import { Header } from "./components/layout/header";
-import { ProjectsCards } from "./components/layout/projects-cards";
+import { AboutMeCards } from "./components/cards/about-me-cards";
+import { ProjectsCards } from "./components/cards/projects-cards";
 import { techStack } from "./database/tech-stack-data";
 
 export default function Home() {
   return (
     <div className="main">
-          <Header/>
           <section id="hero-section" className="flex flex-col md:flex-row items-center justify-center xl:gap-12 py-12 md:py-44">
             <div className="md:pl-12 lg:pl-0 flex flex-col items-center md:items-start max-w-sm xl:max-w-fit pb-6 md:pb-0">
               <h3 className="text-xl lg:text-2xl text-[#A7A7A7]">Hello World! 👋</h3>
