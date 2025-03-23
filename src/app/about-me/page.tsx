@@ -1,8 +1,8 @@
 export default function AboutMe() {
   return (
     <main className="flex flex-col items-center justify-center">
-        <div className="mt-44 w-full max-w-6xl mb-12">
-          <h1 className="text-5xl lg:text-6xl font-bold text-center md:text-start pb-3 text-zinc-100">A little bit more about me</h1>
+        <div className="mt-20 w-full max-w-6xl mb-12">
+          <h1 className="text-5xl lg:text-7xl font-medium text-center md:text-start pb-3 text-zinc-100">A little bit more about me</h1>
           <span className="text-gray-500">Lorem ipsum lorem impsum lorem</span>
         </div>
         <div className="h-[1px] w-full bg-black/10 dark:bg-white/10"></div>
