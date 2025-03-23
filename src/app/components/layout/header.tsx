@@ -30,7 +30,7 @@ export function Header() {
                             <Link
                                 key={item.path}
                                 href={item.path}
-                                className={`text-sm lg:text-md font-base lg:font-medium transition-colors text-gray-200 hover:text-primary ${
+                                className={`text-sm lg:text-md xl:text-lg font-base lg:font-medium transition-colors text-gray-200 hover:text-primary ${
                                     location.pathname === item.path
                                         ? "text-primary"
                                         : "text-foreground"

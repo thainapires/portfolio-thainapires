@@ -15,10 +15,10 @@ interface ProjectCardProps {
 
 export function ProjectCard({name, description, image, link, github_link}: ProjectCardProps) {
   return (
-    <div className="bg-card max-w-sm rounded-4xl border border-gray-700">
+    <div className="bg-card max-w-10/12 lg:max-w-sm rounded-4xl border border-gray-700">
       <div className="flex flex-col h-full p-8 justify-between">
-        <div className="flex flex-col mb-16">
-          <Image src={image} width="500" height="500" alt="" className="pb-4 rounded-md"/>
+        <div className="flex flex-col mb-6 md:mb-16">
+          <Image src={image} width="500" height="500" alt="" className="hidden lg:flex pb-4 rounded-md"/>
           <div className="text-xl font-bold mb-2">{name}</div>
           <p className="text-[#808080]">{description}</p>
         </div>
