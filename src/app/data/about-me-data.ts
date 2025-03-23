@@ -9,7 +9,7 @@ export const aboutMeTopics = [
         id: 2,
         name: "Bookshelf",
         description: "Here are some books I've enjoyed reading.",
-        image: "/about-me/books2.png",
+        image: "/about-me/books.png",
     },
     {
         id: 3,

@@ -1,6 +1,6 @@
 'use client';
 
-import { projects } from "@/app/database/project-data";
+import { projects } from "@/app/data/project-data";
 import { ProjectCard } from "./project-card";
 
 export function ProjectsCards() {

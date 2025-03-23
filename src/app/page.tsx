@@ -6,7 +6,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { AboutMeCards } from "./components/cards/about-me-cards";
 import { ProjectsCards } from "./components/cards/projects-cards";
-import { techStack } from "./database/tech-stack-data";
+import { techStack } from "./data/tech-stack-data";
 
 export default function Home() {
   return (
@@ -46,8 +46,8 @@ export default function Home() {
                   width={100} 
                   height={100} 
                   alt="" 
-                  className="w-12 h-12 md:w-20 md:h-20 xl:w-24 xl:h-24"
-                />
+                  className="w-12 h-12 md:w-20 md:h-20 xl:w-24 xl:h-24 hover:scale-125 duration-200"
+                  />
               ))}
             </div>
             <a href="/skills" className="flex gap-1 items-center cursor-pointer hover:text-primary">
