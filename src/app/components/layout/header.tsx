@@ -18,9 +18,8 @@ export function Header() {
     ];
 
     return (
-        <header className="border-b border-gray-700 py-8 px-10 xl:px-18 sticky">
-            <div className="flex items-center justify-between gap-6 lg:gap-12">
-                <div className="flex items-center justify-between w-full gap-6">
+        <header className="flex items-center justify-center py-8 px-10 xl:px-18 bg-card/30">
+                <div className="flex items-center justify-between w-full max-w-6xl">
                     <Link href="/" className="flex items-center gap-2">
                         <Palette className="h-6 w-6 text-primary" />
                         <span className="font-bold text-lg lg:text-2xl">Thainá Pires</span>
@@ -36,9 +35,8 @@ export function Header() {
                                 {item.name}
                             </Link>
                         ))}
+                        <ThemeToggle />
                     </nav>
-                </div>
-                <ThemeToggle />
             </div>
         </header>
     )

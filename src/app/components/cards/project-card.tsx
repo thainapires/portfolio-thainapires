@@ -24,12 +24,12 @@ export function ProjectCard({name, description, image, link, github_link}: Proje
         </div>
         <div className={`flex ${link ? 'justify-between' : 'justify-end'}`}>
           {link && (
-            <a href={link} target="_blank" className="flex gap-1 items-center cursor-pointer">
-              <span >Visit Site</span>
+            <a href={link} target="_blank" className="flex gap-1 items-center cursor-pointer hover:text-primary">
+              <span>Visit Site</span>
               <ArrowRight className="w-5 h-5"/>
             </a>
           )}
-          <a href={github_link} target="_blank" className="flex gap-2 items-center cursor-pointer">
+          <a href={github_link} target="_blank" className="flex gap-2 items-center cursor-pointer hover:text-primary">
             <FaGithub className="w-4 h-4"/>
             <span>View Code</span>
           </a>

@@ -1,3 +1,5 @@
+'use client';
+
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
@@ -14,10 +16,10 @@ export default function Home() {
               <h3 className="text-xl lg:text-2xl text-[#A7A7A7]">Hello World! 👋</h3>
               <h3 className="text-xl lg:text-2xl text-[#A7A7A7] pb-3">I'm Thainá and I'm a</h3>
               <h1 className="text-5xl lg:text-6xl font-bold text-center md:text-start pb-3">Full Stack Developer</h1>
-              <span className="text-md">who also loves art, travelling, the nature and biking!</span>
+              <span className="text-md text-center md:text-start max-w-4/5 md:max-w-fit">who also loves <span className="text-purple-400 font-bold">art</span>, <span className="text-sky-500 font-bold">travelling</span>, <span className="text-emerald-400 font-bold">the nature</span> and <span className="text-yellow-500 font-bold">biking!</span></span>
               <div className="flex md:flex-col lg:flex-row gap-2 pt-8">
-                <button className="md:w-full lg:w-fit bg-primary py-2 px-8 md:px-12 border border-primary rounded-md font-medium cursor-pointer text-sm md:text-base">Contact</button>
-                <button className="md:w-full lg:w-fit py-2 px-3 md:px-8 border border-gray-700 rounded-md font-medium cursor-pointer text-sm md:text-base">View Projects</button>
+                <a href="/contact" className="md:w-full lg:w-fit bg-primary py-2 px-8 md:px-12 border border-primary rounded-md font-medium cursor-pointer text-sm md:text-base">Contact</a>
+                <a href="/projects" className="md:w-full lg:w-fit py-2 px-3 md:px-8 border border-gray-700 rounded-md font-medium cursor-pointer text-sm md:text-base">View Projects</a>
               </div>
             </div>
             <div className="hidden md:flex justify-center items-center max-w-xs max-h-xs xl:max-h-sm xl:max-w-sm">
@@ -38,7 +40,7 @@ export default function Home() {
             <div className="py-16">
               <ProjectsCards />
             </div>
-            <a href="/" className="flex gap-1 items-center cursor-pointer">
+            <a href="/projects" className="flex gap-1 items-center cursor-pointer hover:text-primary">
               <span >View All</span>
               <ArrowRight className="w-5 h-5"/>
             </a>
@@ -49,6 +51,7 @@ export default function Home() {
             <div className="grid grid-cols-4 lg:grid-cols-6 items-center gap-8 md:gap-20 py-18">
               {techStack.map((tech) => (
                 <Image 
+                  key={tech.id}
                   src={tech.src} 
                   width={100} 
                   height={100} 
@@ -57,27 +60,32 @@ export default function Home() {
                 />
               ))}
             </div>
-            <a href="/" className="flex gap-1 items-center cursor-pointer">
+            <a href="/skills" className="flex gap-1 items-center cursor-pointer hover:text-primary">
               <span >View All</span>
               <ArrowRight className="w-5 h-5"/>
             </a>
           </section>
           <section id="about-me-section" className="flex flex-col items-center justify-center py-20 bg-muted-background">
             <h2 className="text-3xl md:text-5xl font-bold mb-3">Get to know me</h2>
-            <p className="text-[#A7A7A7] md:text-lg max-w-4/5 text-center font-poppins tracking-wide">Besides being a developer, that are some more things I really love and that makes me, me!</p>
+            <p className="text-[#A7A7A7] md:text-lg max-w-4/5 text-center font-poppins tracking-wide">Besides being a developer, there are many other passions that shape who I am and enrich my coding journey. These interests influence my creativity, problem-solving, and approach to development.</p>
             <AboutMeCards />
           </section>
           <section id="get-in-touch-section" className="flex flex-col items-center justify-center py-20">
             <h2 className="text-3xl md:text-5xl font-bold mb-3">Contact</h2>
-            <p className="text-[#A7A7A7] md:text-lg max-w-4/5 text-center font-poppins tracking-wide">Places where you can find me!</p>
+            <p className="text-[#A7A7A7] md:text-lg max-w-4/5 text-center font-poppins tracking-wide">Here's where you can find me!</p>
             <div className="flex gap-4 mt-10">
-              <a href="https://linkedin.com/in/thainapires" target="_blank" className="transition-transform transform hover:scale-110">
+              <a href="https://linkedin.com/in/thainapires" target="_blank" className="transition-transform transform cursor-pointer hover:scale-110">
                 <FaLinkedin className="w-14 h-auto text-zinc-300 hover:text-sky-600"/>
               </a>
-              <a href="/" target="_blank" className="transition-transform transform hover:scale-110">
+              <a 
+                href="https://mail.google.com/mail/?view=cm&fs=1&to=thainaspiress@gmail.com&su=Let's Connect&body=Hi, Thainá! I'd love to get in touch!" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                className="transition-transform transform hover:scale-110 cursor-pointer"
+              >
                 <IoMdMail className="w-14 h-auto text-zinc-300 hover:text-red-600"/>
               </a>
-              <a href="https://github.com/thainapires" target="_blank" className="transition-transform transform hover:scale-110">
+              <a href="https://github.com/thainapires" target="_blank" className="transition-transform transform cursor-pointer hover:scale-110">
                 <FaGithub className="w-14 h-auto text-zinc-300 hover:text-[#5C6BC0]"/>
               </a>
             </div>

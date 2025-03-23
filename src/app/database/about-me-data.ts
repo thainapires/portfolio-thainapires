@@ -8,19 +8,19 @@ export const aboutMeTopics = [
     {
         id: 2,
         name: "Bookshelf",
-        description: "Here are some of the books I enjoyed reading",
+        description: "Here are some books I've enjoyed reading.",
         image: "/about-me/books2.png",
     },
     {
         id: 3,
         name: "Creativivity",
-        description: "I love to express through art.",
+        description: "I love expressing myself through art.",
         image: "/about-me/art.png",
     },
     {
         id: 4,
         name: "Wanderlust",
-        description: "I love travelling and learning more about new cultures.",
+        description: "I'm passionate about travelling and exploring new cultures.",
         image: "/about-me/wanderlust.png",
     },
 ];
