@@ -18,7 +18,7 @@ export function Header() {
     ];
 
     return (
-        <header className="flex items-center justify-center py-8 px-10 xl:px-18 bg-card/30">
+        <header className="flex items-center justify-center py-8 px-10 xl:px-18 bg-muted-background">
                 <div className="flex items-center justify-between w-full max-w-6xl">
                     <Link href="/" className="flex items-center gap-2">
                         <Palette className="h-6 w-6 text-primary" />

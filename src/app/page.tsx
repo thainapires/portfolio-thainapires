@@ -12,26 +12,16 @@ export default function Home() {
   return (
     <div className="main">
           <section id="hero-section" className="flex flex-col md:flex-row items-center justify-center xl:gap-12 py-12 md:py-44">
-            <div className="md:pl-12 lg:pl-0 flex flex-col items-center md:items-start max-w-sm xl:max-w-fit pb-6 md:pb-0">
-              <h3 className="text-xl lg:text-2xl text-[#A7A7A7]">Hello World! 👋</h3>
-              <h3 className="text-xl lg:text-2xl text-[#A7A7A7] pb-3">I'm Thainá and I'm a</h3>
-              <h1 className="text-5xl lg:text-6xl font-bold text-center md:text-start pb-3">Full Stack Developer</h1>
-              <span className="text-md text-center md:text-start max-w-4/5 md:max-w-fit">who also loves <span className="text-purple-400 font-bold">art</span>, <span className="text-sky-500 font-bold">travelling</span>, <span className="text-emerald-400 font-bold">the nature</span> and <span className="text-yellow-500 font-bold">biking!</span></span>
-              <div className="flex md:flex-col lg:flex-row gap-2 pt-8">
-                <a href="/contact" className="md:w-full lg:w-fit bg-primary py-2 px-8 md:px-12 border border-primary rounded-md font-medium cursor-pointer text-sm md:text-base">Contact</a>
-                <a href="/projects" className="md:w-full lg:w-fit py-2 px-3 md:px-8 border border-gray-700 rounded-md font-medium cursor-pointer text-sm md:text-base">View Projects</a>
+            <div className="text-center flex flex-col items-center md:items-start pb-6 md:pb-0 m-5">
+              <h1 className="2xl:mx-42 text-4xl md:text-5xl lg:text-6xl font-bold text-center pb-6 leading-12 md:leading-20">
+                Hi <span className="wave-hover">👋</span> My name is Thainá
+                and I'm a <span className="rounded-2xl p-1 bg-gradient-to-r from-purple-500 to-blue-500 whitespace-nowrap">Full Stack Developer</span>
+              </h1>
+              <span className="w-full text-sm md:text-lg text-center max-w-8/10 md:max-w-full">who also loves <span className="text-purple-400 font-bold">art 🎨</span>, <span className="text-sky-500 font-bold">travelling ✈️</span>, <span className="text-emerald-400 font-bold">the nature 🌱</span> and <span className="text-yellow-500 font-bold">biking 🚲</span></span>
+              <div className="flex flex-row gap-2 pt-8 w-full items-center justify-center">
+                <a href="/contact" className="bg-primary py-2 px-8 md:px-12 border border-primary rounded-md font-medium cursor-pointer text-sm md:text-base">Contact</a>
+                <a href="/projects" className="py-2 px-3 md:px-8 border border-zinc-400 rounded-md font-medium cursor-pointer text-sm md:text-base">View Projects</a>
               </div>
-            </div>
-            <div className="hidden md:flex justify-center items-center max-w-xs max-h-xs xl:max-h-sm xl:max-w-sm">
-              {/* Blurred Background */}
-              {/* <div className="absolute size-80 blur-3xl rounded-full bg-primary"></div>*/}
-              <Image
-                src="/avatar.jpg"
-                alt="Picture of Thainá"
-                className="relative rounded-3xl"
-                width={500}
-                height={500}
-              />
             </div>
           </section>
           <section id="selected-work-section" className="flex flex-col items-center justify-center py-20 bg-muted-background">

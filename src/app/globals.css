@@ -25,6 +25,27 @@
   --font-poppins: "Poppins", sans-serif; 
 }
 
+
+/* Waving Hand Animation */
+@keyframes wave {
+  0% { transform: rotate(0deg); }
+  20% { transform: rotate(20deg); }
+  40% { transform: rotate(-10deg); }
+  60% { transform: rotate(10deg); }
+  80% { transform: rotate(-5deg); }
+  100% { transform: rotate(0deg); }
+}
+
+/* Hover animation */
+.wave-hover {
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
+}
+
+.wave-hover:hover {
+  animation: wave 1s ease-in-out;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
