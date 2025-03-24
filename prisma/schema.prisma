@@ -12,7 +12,7 @@ model Skill {
   name       String
   level      String?
   type       String
-  highlight  Boolean
+  highlight  Boolean  @default(false)
   logo_url   String
   created_at DateTime @default(now())
   updated_at DateTime @updatedAt
@@ -26,6 +26,7 @@ model Project {
   description    String
   screenshot_url String
   tech_stack     String
+  highlight      Boolean  @default(false)
   link           String?
   github_link    String?
   created_at     DateTime @default(now())

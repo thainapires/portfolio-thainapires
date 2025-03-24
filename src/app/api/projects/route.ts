@@ -15,6 +15,22 @@ export const projectSchema = z.object({
 
 type ProjectRequestBody = z.infer<typeof projectSchema>
 
+export async function GET(req: Request) {
+  try {
+    const { searchParams } = new URL(req.url);
+    const highlight = searchParams.get("highlight");
+
+    const projects = await prisma.project.findMany({
+      where: highlight !== null ? { highlight: highlight === "true" } : undefined,
+    });
+    
+    return NextResponse.json(projects);
+  } catch (error) {
+    console.log(error);
+    return NextResponse.json({ error: "Failed to fetch projects" }, { status: 500 });
+  }
+}
+
 export async function POST(req: Request) {
   try {
 

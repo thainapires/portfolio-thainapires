@@ -14,6 +14,21 @@ const skillSchema = z.object({
 
 type SkillRequestBody = z.infer<typeof skillSchema>
 
+export async function GET(req: Request) {
+  try {
+    const { searchParams } = new URL(req.url);
+    const highlight = searchParams.get("highlight");
+
+    const skills = await prisma.skill.findMany({
+      where: highlight !== null ? { highlight: highlight === "true" } : undefined,
+    });
+
+    return NextResponse.json(skills);
+  } catch (error) {
+    return NextResponse.json({ error: "Failed to fetch skills" }, { status: 500 });
+  }
+}
+
 export async function POST(req: Request) {
   try {
 
