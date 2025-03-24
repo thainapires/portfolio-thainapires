@@ -20,7 +20,7 @@ export function DropDown({ dropdownItems }: DropDownProps) {
             onMouseLeave={() => setDropdownOpen(false)} 
         >
             <button
-                className="flex items-center gap-1 text-sm lg:text-md xl:text-lg font-base lg:font-medium transition-colors text-gray-200 hover:text-primary cursor-pointer"
+                className="flex items-center gap-1 text-lg font-medium transition-colors hover:dark:text-primary hover:text-primary-dark cursor-pointer"
                 onClick={toggleDropdown} 
             >
                 More <ChevronDown className="h-4 w-4" />
@@ -36,7 +36,7 @@ export function DropDown({ dropdownItems }: DropDownProps) {
                         <Link
                             key={item.path}
                             href={item.path}
-                            className="block px-4 py-2 text-sm lg:text-md xl:text-lg font-base lg:font-medium text-gray-200 hover:bg-gray-700 hover:text-primary transition-colors"
+                            className="block px-4 py-2 text-lg font-medium hover:dark:bg-gray-700 hover:bg-gray-200 hover:dark:text-primary hover:text-primary-dark transition-colors"
                         >
                             {item.name}
                         </Link>

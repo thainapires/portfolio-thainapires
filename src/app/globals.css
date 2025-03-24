@@ -1,39 +1,62 @@
 @import "tailwindcss";
 
-@custom-variant dark (&:where(.dark, .dark *)); 
+@custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --background: #FBFBFB;
-  --foreground: #181818;
+  --background: var(--color-zinc-100);
+  --foreground: var(--color-zinc-800);
+  --muted-background: var(--color-zinc-200);
   --primary: #9153f4;
+  --primary-dark: #6d2dd3;
+
+  .bg-header {
+    background-image: url("/header.png");
+  }
 }
 
 .dark {
   --background: var(--color-gray-900);
-  --foreground: #FDF7F8;
-  --muted-background: #18212F;
-  --card: #1F2937;
+  --foreground: #fdf7f8;
+  --muted-background: #18212f;
+  --card: #1f2937;
+
+  .bg-header {
+    background-image: none;
+  }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
   --color-muted-background: var(--muted-background);
   --color-card: var(--card);
-  --font-sans: var(--font-inter);
-  --font-poppins: "Poppins", sans-serif; 
-}
 
+  --font-sans: var(--font-inter);
+  --font-poppins: "Poppins", sans-serif;
+}
 
 /* Waving Hand Animation */
 @keyframes wave {
-  0% { transform: rotate(0deg); }
-  20% { transform: rotate(20deg); }
-  40% { transform: rotate(-10deg); }
-  60% { transform: rotate(10deg); }
-  80% { transform: rotate(-5deg); }
-  100% { transform: rotate(0deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  20% {
+    transform: rotate(20deg);
+  }
+  40% {
+    transform: rotate(-10deg);
+  }
+  60% {
+    transform: rotate(10deg);
+  }
+  80% {
+    transform: rotate(-5deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 /* Hover animation */

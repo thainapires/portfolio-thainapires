@@ -32,7 +32,7 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${rubik.variable} ${poppins.variable} antialiased`} suppressHydrationWarning>
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem={true}> 
+        <ThemeProvider attribute="class" defaultTheme="dark" enableSystem={true}> 
           <QueryClientProvider client={queryClient}>
             <Header />
             {children}

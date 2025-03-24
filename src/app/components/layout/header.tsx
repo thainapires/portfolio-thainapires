@@ -26,25 +26,25 @@ export function Header() {
 
     return (
         <header className="flex items-center justify-center py-8 px-10 xl:px-18 bg-muted-background">
-                <div className="flex items-center justify-between w-full max-w-6xl">
-                    <Link href="/" className="flex items-center gap-2">
-                        <Palette className="h-6 w-6 text-primary" />
-                        <span className="font-bold text-lg lg:text-2xl">Thainá Pires</span>
-                    </Link>
-                    <nav className="hidden md:flex items-center gap-3 lg:gap-8 xl:gap-12 relative">
-                        {navItems.map((item) => (
-                            <Link
-                                key={item.path}
-                                href={item.path}
-                                className={`text-sm lg:text-md xl:text-lg font-base lg:font-medium transition-colors 
-                                    ${pathname === item.path ? 'text-primary font-bold' : 'text-gray-200 hover:text-primary'}`}
-                            >
-                                {item.name}
-                            </Link>
-                        ))}
-                        <DropDown dropdownItems={dropdownItems} />
-                        <ThemeToggle />
-                    </nav>
+            <div className="flex items-center justify-between w-full max-w-6xl">
+                <Link href="/" className="flex items-center gap-2">
+                    <Palette className="h-6 w-6 text-primary-dark dark:text-primary" />
+                    <span className="font-bold text-2xl">Thainá Pires</span>
+                </Link>
+                <nav className="hidden md:flex items-center gap-8 lg:gap-12 relative">
+                    {navItems.map((item) => (
+                        <Link
+                            key={item.path}
+                            href={item.path}
+                            className={`text-lg font-medium transition-colors 
+                                ${pathname === item.path ? 'text-primary-dark dark:text-primary font-bold' : 'hover:text-primary-dark dark:hover:text-primary'}`}
+                        >
+                            {item.name}
+                        </Link>
+                    ))}
+                    <DropDown dropdownItems={dropdownItems} />
+                    <ThemeToggle />
+                </nav>
             </div>
         </header>
     )
