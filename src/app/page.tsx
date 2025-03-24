@@ -1,9 +1,13 @@
 'use client';
 
+import { useQuery } from "@tanstack/react-query";
+import { ArrowRight } from "lucide-react";
+import Image from "next/image";
 import Link from "next/link";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { AboutMeCards } from "./components/cards/about-me-cards";
+import { ProjectsCards } from "./components/cards/projects-cards";
 
 const fetchSkills = async (): Promise<Skill[]> => {
   const res = await fetch("/api/skills");
@@ -14,12 +18,12 @@ const fetchSkills = async (): Promise<Skill[]> => {
 export default function Home() {
 
   // TODO: Maybe change to useMutation instead of useQuery
-  /* const { data: skills, error: skillsError, isLoading: isLoadingSkills } = useQuery<Skill[]>({
+  const { data: skills, error: skillsError, isLoading: isLoadingSkills } = useQuery<Skill[]>({
     queryKey: ["skills"],
     queryFn: fetchSkills,
     staleTime: 5 * 60 * 1000, 
     gcTime: 5 * 60 * 1000,  
-  }); */
+  });
 
   return (
     <div className="main">
@@ -45,9 +49,9 @@ export default function Home() {
         </div>
       </section>
       {/* Selected Projects Section */}
-      {/* <section id="selected-work-section" className="flex flex-col items-center justify-center py-20 bg-muted-background">
+      <section id="selected-work-section" className="flex flex-col items-center justify-center py-20 bg-muted-background">
         <h2 className="text-3xl md:text-5xl font-bold mb-3">Selected Projects</h2>
-        <p className="text-[#A7A7A7] text-center md:text-lg max-w-4/5 font-poppins tracking-wide">A curated list of projects that showcase what I’ve being creating 🖌️👩‍💻</p>
+        <p className="text-zinc-500 dark:text-[#A7A7A7] text-center md:text-lg max-w-4/5 font-poppins tracking-wide">A curated list of projects that showcase what I’ve being creating 🖌️👩‍💻</p>
         <div className="py-16">
           <ProjectsCards />
         </div>
@@ -55,12 +59,12 @@ export default function Home() {
           <span >View All</span>
           <ArrowRight className="w-5 h-5"/>
         </Link>
-      </section> */}
+      </section>
 
       {/* Skills Section */}
-      {/* <section id="skills-section" className="flex flex-col items-center justify-center py-20">
+      <section id="skills-section" className="flex flex-col items-center justify-center py-20">
         <h2 className="text-3xl md:text-5xl font-bold mb-3">My Skills</h2>
-        <p className="text-[#A7A7A7] text-center md:text-lg max-w-4/5 font-poppins tracking-wide">Technologies I’ve been working with and studying recently</p>
+        <p className="text-zinc-500 dark:text-[#A7A7A7] text-center md:text-lg max-w-4/5 font-poppins tracking-wide">Technologies I’ve been working with and studying recently</p>
         <div className="grid grid-cols-4 lg:grid-cols-6 items-center gap-8 md:gap-20 py-18">
             { isLoadingSkills ? (
               <div>Loading Skills</div>
@@ -81,22 +85,22 @@ export default function Home() {
           <span >View All</span>
           <ArrowRight className="w-5 h-5"/>
         </Link>
-      </section> */}
+      </section>
 
       {/* About me Section */}
       <section id="about-me-section" className="flex flex-col items-center justify-center py-20 bg-muted-background">
         <h2 className="text-3xl md:text-5xl font-bold mb-3">Get to know me</h2>
-        <p className="text-[#A7A7A7] md:text-lg max-w-4/5 text-center font-poppins tracking-wide">Besides being a developer, there are many other passions that shape who I am and enrich my coding journey. These interests influence my creativity, problem-solving, and approach to development.</p>
+        <p className="text-zinc-500 dark:text-[#A7A7A7] md:text-lg max-w-4/5 text-center font-poppins tracking-wide">Besides being a developer, there are many other passions that shape who I am and enrich my coding journey. These interests influence my creativity, problem-solving, and approach to development.</p>
         <AboutMeCards />
       </section>
 
       {/* Contact Section */}
       <section id="get-in-touch-section" className="flex flex-col items-center justify-center py-20">
         <h2 className="text-3xl md:text-5xl font-bold mb-3">Contact</h2>
-        <p className="text-[#A7A7A7] md:text-lg max-w-4/5 text-center font-poppins tracking-wide">Here's where you can find me!</p>
+        <p className="text-zinc-500 dark:text-[#A7A7A7] md:text-lg max-w-4/5 text-center font-poppins tracking-wide">Here's where you can find me!</p>
         <div className="flex gap-4 mt-10">
           <Link href="https://linkedin.com/in/thainapires" target="_blank" rel="noopener noreferrer" className="transition-transform transform cursor-pointer hover:scale-110">
-            <FaLinkedin className="w-14 h-auto text-zinc-300 hover:text-sky-600"/>
+            <FaLinkedin className="w-14 h-auto text-sky-600 dark:text-zinc-300 hover:text-sky-600"/>
           </Link>
           <Link
             href="https://mail.google.com/mail/?view=cm&fs=1&to=thainaspiress@gmail.com&su=Let's Connect&body=Hi, Thainá! I'd love to get in touch!" 
@@ -104,10 +108,10 @@ export default function Home() {
             rel="noopener noreferrer" 
             className="transition-transform transform hover:scale-110 cursor-pointer"
           >
-            <IoMdMail className="w-14 h-auto text-zinc-300 hover:text-red-600"/>
+            <IoMdMail className="w-14 h-auto text-red-700 dark:text-zinc-300 hover:text-red-600 hover:text-red-700"/>
           </Link>
           <Link href="https://github.com/thainapires" target="_blank" rel="noopener noreferrer" className="transition-transform transform cursor-pointer hover:scale-110">
-            <FaGithub className="w-14 h-auto text-zinc-300 hover:text-[#5C6BC0]"/>
+            <FaGithub className="w-14 h-auto text-[#5C6BC0] dark:text-zinc-300 hover:text-[#5C6BC0]"/>
           </Link>
         </div>
       </section>

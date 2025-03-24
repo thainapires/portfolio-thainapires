@@ -12,10 +12,10 @@ interface AboutMeCardProps {
 
 export function AboutMeCard({name, description, image}: AboutMeCardProps) {
   return (
-      <div className="group flex flex-col items-center justify-between overflow-hidden rounded-3xl border-[1px] pt-16 transition dark:border-transparent bg-card">
+      <div className="group flex flex-col items-center justify-between overflow-hidden rounded-3xl border-[2px] pt-16 transition border-card-border dark:border-transparent bg-card">
         <div>
           <div className="text-center text-xl md:text-4xl font-bold dark:text-white">{name}</div>
-          <p className="text-xs md:text-md lg:text-base mt-2 text-center text-gray-400">{description}</p>
+          <p className="text-xs md:text-md lg:text-base mt-2 text-center text-zinc-500 dark:text-gray-400">{description}</p>
         </div>
         <Image
           src={image}

@@ -5,12 +5,32 @@
 :root {
   --background: var(--color-zinc-100);
   --foreground: var(--color-zinc-800);
-  --muted-background: var(--color-zinc-200);
+  --muted-background: #fbfbfb;
   --primary: #9153f4;
   --primary-dark: #6d2dd3;
 
-  .bg-header {
+  --card: #f6f6f6;
+  --card-border: #ebebeb;
+
+  /* .bg-header {
     background-image: url("/header.png");
+  }*/
+  .bg-header {
+    background-image: linear-gradient(
+      to right,
+      #002f85,
+      #412a83,
+      #61237e,
+      #7a1976,
+      #8e0c6c,
+      #880b5d,
+      #810d50,
+      #791144,
+      #5b1433,
+      #3e1324,
+      #230e15,
+      #000000
+    );
   }
 }
 
@@ -32,6 +52,7 @@
   --color-primary-dark: var(--primary-dark);
   --color-muted-background: var(--muted-background);
   --color-card: var(--card);
+  --color-card-border: var(--card-border);
 
   --font-sans: var(--font-inter);
   --font-poppins: "Poppins", sans-serif;
