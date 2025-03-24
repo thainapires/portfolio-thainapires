@@ -1,9 +1,10 @@
 'use client';
 
-import { ChevronDown, Palette } from "lucide-react";
+import { Palette } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { DropDown } from "../dropdown";
 import { ThemeToggle } from "./theme-toggle";
 
 export function Header() {
@@ -41,28 +42,7 @@ export function Header() {
                                 {item.name}
                             </Link>
                         ))}
-                        <div 
-                            className="relative"
-                            onMouseEnter={() => setDropdownOpen(true)}
-                            onMouseLeave={() => setDropdownOpen(false)}
-                        >
-                            <button className="flex items-center gap-1 text-sm lg:text-md xl:text-lg font-base lg:font-medium transition-colors text-gray-200 hover:text-primary">
-                                More <ChevronDown className="h-4 w-4" />
-                            </button>
-                            {dropdownOpen && (
-                                <div className="absolute left-0 mt-2 w-40 bg-muted-background border border-gray-700 shadow-lg rounded-lg py-2">
-                                    {dropdownItems.map((item) => (
-                                        <Link
-                                            key={item.path}
-                                            href={item.path}
-                                            className="block px-4 py-2 text-sm text-gray-200 hover:bg-gray-700 hover:text-primary"
-                                        >
-                                            {item.name}
-                                        </Link>
-                                    ))}
-                                </div>
-                            )}
-                        </div>
+                        <DropDown dropdownItems={dropdownItems} />
                         <ThemeToggle />
                     </nav>
             </div>

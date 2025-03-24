@@ -25,8 +25,6 @@ export const metadata: Metadata = {
   description: "Portfolio of Thainá Pires",
 };
 
-//Test rubik font
-
 export default function RootLayout({children}: Readonly<{children: React.ReactNode}>) {
   return (
     <html lang="en" suppressHydrationWarning>

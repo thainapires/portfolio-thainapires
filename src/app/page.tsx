@@ -6,7 +6,7 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { IoMdMail } from "react-icons/io";
 import { AboutMeCards } from "./components/cards/about-me-cards";
 import { ProjectsCards } from "./components/cards/projects-cards";
-import { techStack } from "./data/tech-stack-data";
+import { skills } from "./data/skills.data";
 
 export default function Home() {
   return (
@@ -39,16 +39,16 @@ export default function Home() {
             <h2 className="text-3xl md:text-5xl font-bold mb-3">My Skills</h2>
             <p className="text-[#A7A7A7] text-center md:text-lg max-w-4/5 font-poppins tracking-wide">Technologies I’ve been working with and studying recently</p>
             <div className="grid grid-cols-4 lg:grid-cols-6 items-center gap-8 md:gap-20 py-18">
-              {techStack.map((tech) => (
-                <Image 
-                  key={tech.id}
-                  src={tech.src} 
-                  width={100} 
-                  height={100} 
-                  alt="" 
-                  className="w-12 h-12 md:w-20 md:h-20 xl:w-24 xl:h-24 hover:scale-125 duration-200"
-                  />
-              ))}
+                {skills.filter(skill => skill.highlight).map((skill) => (
+                  <Image 
+                    key={skill.id}
+                    src={skill.src} 
+                    width={100} 
+                    height={100} 
+                    alt="" 
+                    className="w-12 h-12 md:w-20 md:h-20 xl:w-24 xl:h-24 hover:scale-125 duration-200"
+                    />
+                ))}
             </div>
             <a href="/skills" className="flex gap-1 items-center cursor-pointer hover:text-primary">
               <span >View All</span>
