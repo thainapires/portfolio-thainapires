@@ -1,8 +1,8 @@
 'use client';
 
 import { useQuery } from "@tanstack/react-query";
-import { SkillCard } from "../components/cards/skill-card";
-import { PageContainer } from "../components/layout/page-container";
+import { SkillCard } from "../../components/cards/skill-card";
+import { PageContainer } from "../../components/layout/page-container";
 
 const fetchSkills = async () => {
   const res = await fetch("/api/skills");
