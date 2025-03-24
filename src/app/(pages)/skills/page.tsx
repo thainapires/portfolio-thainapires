@@ -4,7 +4,7 @@ import { useQuery } from "@tanstack/react-query";
 import { SkillCard } from "../../components/cards/skill-card";
 import { PageContainer } from "../../components/layout/page-container";
 
-const fetchSkills = async () => {
+const fetchSkills = async (): Promise<Skill[]> => {
   const res = await fetch("/api/skills");
   if (!res.ok) throw new Error("Failed to fetch skills");
   return res.json();
@@ -12,12 +12,23 @@ const fetchSkills = async () => {
 
 export default function Skills() {
 
-  const { data: skills, error: skillsError, isLoading: isLoadingSkills } = useQuery({
+  const { data: skills, error: skillsError, isLoading: isLoadingSkills } = useQuery<Skill[]>({
     queryKey: ["skills"],
     queryFn: fetchSkills,
     staleTime: 5 * 60 * 1000, 
     gcTime: 5 * 60 * 1000,  
   });
+
+  if (skillsError) {
+    return (
+      <PageContainer
+        title="Skills & more"
+        subtitle="Technologies I Use and Explore, Tools and Devices I Rely On"
+      >
+        <div className="text-red-500 text-center">Failed to load skills: {skillsError.message}</div>
+      </PageContainer>
+    );
+  }
   
   return (
     <PageContainer
@@ -30,7 +41,7 @@ export default function Skills() {
           { isLoadingSkills ? (
             <div>Loading Skills</div>
           ) : (
-            skills.map((skill: { id: string; logo_url: string; name: string, type: string }) => (
+            (skills ?? []).map((skill: Skill) => (
               <SkillCard 
                 key={skill.id}
                 name={skill.name}

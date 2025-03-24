@@ -3,7 +3,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { ProjectCard } from "./project-card";
 
-const fetchProjects = async () => {
+const fetchProjects = async (): Promise<Project[]> => {
   const res = await fetch("/api/projects?highlight=true");
   if (!res.ok) throw new Error("Failed to fetch projects");
   return res.json();
@@ -11,7 +11,7 @@ const fetchProjects = async () => {
 
 export function ProjectsCards() {
   
-  const { data: projects, error: projectsError, isLoading: isLoadingProjects } = useQuery({
+  const { data: projects, error: projectsError, isLoading: isLoadingProjects } = useQuery<Project[]>({
     queryKey: ["projects"],
     queryFn: fetchProjects,
     staleTime: 5 * 60 * 1000, 
@@ -23,10 +23,10 @@ export function ProjectsCards() {
       { isLoadingProjects ? (
         <div>Loading Projects</div>
       ) : (
-        projects.map((project: { id: string; name: string; description: string, screenshot_url: string, link: string, github_link: string }) => (
+        (projects ?? []).map((project: Project) => (
           <ProjectCard
             key={project.id}
-            name={project.name}
+            name={project.title}
             description={project.description}
             image={project.screenshot_url}
             link={project.link}
