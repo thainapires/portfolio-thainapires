@@ -15,3 +15,13 @@ curl --location 'http://localhost:3000/api/project' \
   "github_link": "http://github.com/example"
 }'
 ```
+
+#### RUn seeds
+
+npx prisma db seed
+
+#### With migrations
+
+npx prisma migrate reset  # This will reset database and seed it
+# Or
+npx prisma migrate dev    # Will seed after creating schema

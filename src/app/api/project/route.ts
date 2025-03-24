@@ -4,7 +4,7 @@ import { z } from 'zod';
 
 const prisma = new PrismaClient()
 
-const projectSchema = z.object({
+export const projectSchema = z.object({
   title: z.string().min(1, "Title is required"),
   description: z.string().min(1, "Description is required"),
   screenshot_url: z.string().url("Screenshot URL must be a valid URL"),
