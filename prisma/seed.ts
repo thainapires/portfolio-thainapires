@@ -12,10 +12,7 @@ async function main() {
   
   for (const project of projects) {
     const result = await prisma.project.create({
-      data: {
-        ...project,
-        tech_stack: project.tech_stack.join(', '),
-      },
+      data: project
     })
     console.log(`Created project: ${result.title}`)
   }

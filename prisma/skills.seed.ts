@@ -1,4 +1,4 @@
-export const skills = [
+export const skills: Skill[] = [
     {
       name: "Laravel",
       level: "",

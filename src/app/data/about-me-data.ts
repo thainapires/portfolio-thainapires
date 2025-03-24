@@ -1,4 +1,4 @@
-export const aboutMeTopics = [
+export const aboutMeTopics: AboutMeTopics[] = [
     {
         id: 1,
         name: "About me",

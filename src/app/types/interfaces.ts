@@ -1,14 +1,14 @@
 type Skill = {
-    id: string;
+    id?: string;
     name: string;
-    level: string;
+    level?: string;
     type: string;
-    highlight: boolean;
+    highlight?: boolean;
     logo_url: string;
 };
 
 type Project = {
-    id: string;
+    id?: string;
     title: string;
     description: string;
     screenshot_url: string;
@@ -17,3 +17,10 @@ type Project = {
     link: string;
     github_link: string;
 };
+
+type AboutMeTopics = {
+    id?: number;
+    name: string;
+    description: string;
+    image: string;
+}
