@@ -1,4 +1,4 @@
-# Portfolio - Thainá Pires (WIP)
+# Portfolio - Thainá Pires (WIP) 🛠️
 
 This is a work-in-progress portfolio showcasing my projects and skills, built using nextjs, tailwindcss, prisma, react-query, zod & more. Below you'll find information on the themes, database structure, API usage, useful commands and other things related to the project.
 
